@@ -24,16 +24,6 @@ body {
 	color: $gray-dark;
 	font: 100%/1.5 'Lato', 'Helvetica Neue', helvetica, arial, sans-serif;
 	position: relative;
-	&:after {
-		background: $gray-dark;
-		bottom: 0;
-		content: '';
-		left: 0;
-		position: fixed;
-		top: 0;
-		width: 25%;
-		will-change: transform;
-	}
 }
 
 a {
@@ -41,7 +31,8 @@ a {
 }
 
 .container {
-	margin-left: 25%;
+	margin: 0 auto;
+	max-width: 100em;
 	padding: 5rem 6rem;
 }
 
@@ -56,21 +47,8 @@ a {
 }
 
 @media ( max-width: 60em ) {
-	body {
-		&:after {
-			background: $gray-dark;
-			bottom: 0;
-			content: '';
-			left: 0;
-			position: absolute;
-			top: 0;
-			width: 3%;
-		}
-	}
-
 	.container {
-		margin-left: 3%;
-		padding: 2rem 2.5rem;
+		padding: 3rem 2rem;
 	}
 }
 
@@ -100,7 +78,7 @@ h2 {
 
 @media ( max-width: 60em ) {
 	.header {
-		font-size: 12px;
+		font-size: 11px;
 	}
 }
 
@@ -210,13 +188,13 @@ h3 {
 	}
 }
 
-@media ( max-width: 110em ) {
+@media ( max-width: 80em ) {
 	.item {
 		flex-basis: 50%;
 	}
 }
 
-@media ( max-width: 60em ) {
+@media ( max-width: 40em ) {
 	.items-wrap {
 		font-size: 15px;
 	}
