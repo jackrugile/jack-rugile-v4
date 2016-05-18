@@ -1,0 +1,228 @@
+$accent1: hsl( 0, 70%, 65% );
+$accent2: hsl( 120, 55%, 50% );
+$accent3: hsl( 200, 70%, 60% );
+$accent1-light: lighten( $accent1, 30% );
+$accent2-light: lighten( $accent2, 40% );
+$accent3-light: lighten( $accent3, 35% );
+$gray-dark: #333;
+$gray-mid: rgba(0, 0, 0, 0.4);
+$gray-light: #ddd;
+$duration-off: 600ms;
+$duration-on: 0ms;
+
+/*===============================================================================
+General
+===============================================================================*/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: $gray-dark;
+	font: 100%/1.5 'Lato', 'Helvetica Neue', helvetica, arial, sans-serif;
+	position: relative;
+	&:after {
+		background: $gray-dark;
+		bottom: 0;
+		content: '';
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 25%;
+		will-change: transform;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	margin-left: 25%;
+	padding: 5rem 6rem;
+}
+
+::selection {
+	background: $gray-dark;
+	color: #fff;
+}
+
+::-moz-selection {
+	background: $gray-dark;
+	color: #fff;
+}
+
+@media ( max-width: 60em ) {
+	body {
+		&:after {
+			background: $gray-dark;
+			bottom: 0;
+			content: '';
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 3%;
+		}
+	}
+
+	.container {
+		margin-left: 3%;
+		padding: 2rem 2.5rem;
+	}
+}
+
+/*===============================================================================
+Header
+===============================================================================*/
+
+.header {
+	margin-bottom: 3.5rem;
+}
+
+h1 {
+	font-size: 3em;
+	letter-spacing: -0.025em;
+	line-height: 1;
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	color: $gray-mid;
+	font-size: 1.8em;
+	font-weight: normal;
+	letter-spacing: -0.025em;
+	line-height: 1.2;
+	margin: 0;
+}
+
+@media ( max-width: 60em ) {
+	.header {
+		font-size: 12px;
+	}
+}
+
+/*===============================================================================
+Items
+===============================================================================*/
+
+.items-wrap {
+	margin-bottom: 3.5rem;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+h3 {
+	font-size: 1.5em;
+	font-weight: normal;
+	line-height: 1;
+	margin: 0 0 1.5rem;
+}
+
+.items {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+}
+
+.item {
+	display: flex;
+	flex: 0 1 33.333%;
+	padding-right: 1.5rem;
+}
+
+.item-link {
+	border-left: 2px solid $gray-light;
+	display: flex;
+	flex-basis: 100%;
+	flex-direction: column;
+	padding: 1rem 1.5rem;
+	transition-duration: $duration-off;
+	transition-property:
+		background-color,
+		border-color,
+		transform
+	;
+	&:hover {
+		transition-duration: $duration-on;
+	}
+	&:active {
+		transform: translateY( 3px );
+		transition-duration: $duration-on;
+	}
+}
+
+.item-title {
+	color: $gray-dark;
+	display: block;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.item-description {
+	color: $gray-mid;
+	display: block;
+	font-size: 1em;
+}
+
+.items-wrap:nth-child( 2 ) {
+	h3 {
+		color: $accent1;
+	}
+
+	.item-link {
+		border-left-color: $accent1;
+		&:hover {
+			background: $accent1-light;
+			border-color: $accent1;
+		}
+	}
+}
+
+.items-wrap:nth-child( 3 ) {
+	h3 {
+		color: $accent2;
+	}
+
+	.item-link {
+		border-left-color: $accent2;
+		&:hover {
+			background: $accent2-light;
+			border-color: $accent2;
+		}
+	}
+}
+
+.items-wrap:nth-child( 4 ) {
+	h3 {
+		color: $accent3;
+	}
+
+	.item-link {
+		border-left-color: $accent3;
+		&:hover {
+			background: $accent3-light;
+			border-color: $accent3;
+		}
+	}
+}
+
+@media ( max-width: 110em ) {
+	.item {
+		flex-basis: 50%;
+	}
+}
+
+@media ( max-width: 60em ) {
+	.items-wrap {
+		font-size: 15px;
+	}
+
+	.item {
+		flex-basis: 100%;
+		padding-right: 0;
+	}
+}
