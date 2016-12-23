@@ -1,5 +1,5 @@
 $accent1: hsl( 0, 70%, 65% );
-$accent2: hsl( 120, 55%, 50% );
+$accent2: hsl( 120, 55%, 55% );
 $accent3: hsl( 200, 70%, 60% );
 $accent1-light: lighten( $accent1, 30% );
 $accent2-light: lighten( $accent2, 40% );
@@ -7,7 +7,7 @@ $accent3-light: lighten( $accent3, 35% );
 $gray-dark: #333;
 $gray-mid: rgba(0, 0, 0, 0.4);
 $gray-light: #ddd;
-$duration-off: 600ms;
+$duration-off: 500ms;
 $duration-on: 0ms;
 
 /*===============================================================================
@@ -22,7 +22,7 @@ General
 
 body {
 	color: $gray-dark;
-	font: 100%/1.5 'Lato', 'Helvetica Neue', helvetica, arial, sans-serif;
+	font: 100%/1.5 'Helvetica Neue', helvetica, arial, sans-serif;
 	position: relative;
 }
 
@@ -94,10 +94,14 @@ Items
 }
 
 h3 {
+	color: #fff;
+	display: inline-block;
 	font-size: 1.5em;
-	font-weight: normal;
+	font-weight: 700;
+	letter-spacing: -0.025em;
 	line-height: 1;
 	margin: 0 0 1.5rem;
+	padding: 0.8rem 1.6rem;
 }
 
 .items {
@@ -133,57 +137,66 @@ h3 {
 	}
 }
 
+.item-title,
+.item-description {
+	display: block;
+	transition-duration: $duration-off;
+	transition-property: color;
+	.item-link:hover & {
+		color: #fff;
+		transition-duration: $duration-on;
+	}
+}
+
 .item-title {
 	color: $gray-dark;
-	display: block;
 	font-size: 1.2em;
 	font-weight: bold;
 }
 
 .item-description {
 	color: $gray-mid;
-	display: block;
 	font-size: 1em;
 }
 
 .items-wrap:nth-child( 2 ) {
 	h3 {
-		color: $accent1;
+		background: $accent1;
 	}
-
 	.item-link {
 		border-left-color: $accent1;
 		&:hover {
-			background: $accent1-light;
+			background: $accent1;
 			border-color: $accent1;
+			color: #fff;
 		}
 	}
 }
 
 .items-wrap:nth-child( 3 ) {
 	h3 {
-		color: $accent2;
+		background: $accent2;
 	}
-
 	.item-link {
 		border-left-color: $accent2;
 		&:hover {
-			background: $accent2-light;
+			background: $accent2;
 			border-color: $accent2;
+			color: #fff;
 		}
 	}
 }
 
 .items-wrap:nth-child( 4 ) {
 	h3 {
-		color: $accent3;
+		background: $accent3;
 	}
-
 	.item-link {
 		border-left-color: $accent3;
 		&:hover {
-			background: $accent3-light;
+			background: $accent3;
 			border-color: $accent3;
+			color: #fff;
 		}
 	}
 }
