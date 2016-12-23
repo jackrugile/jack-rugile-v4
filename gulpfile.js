@@ -28,8 +28,7 @@ HTML
 
 gulp.task('html', function() {
 	gulp.src( 'src/index.html' )
-	.pipe( gulp.dest( 'dist' ) )
-	.pipe( p.notify( 'Gulp HTML Task Completed' ) );
+	.pipe( gulp.dest( 'dist' ) );
 });
 
 /*==============================================================================
