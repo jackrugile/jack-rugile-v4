@@ -19,8 +19,7 @@ gulp.task( 'clean', function() {
 	gulp.src( [ 'dist/index.html', 'dist/css' ], { 
 			read: false
 		})
-		.pipe( p.rimraf() )
-		.pipe( p.notify( 'Gulp Clean Task Complete' ) );
+		.pipe( p.rimraf() );
 });
 
 /*==============================================================================
@@ -48,8 +47,7 @@ gulp.task( 'styles', function() {
 		.pipe( p.autoprefixer() )
 		.pipe( p.minifyCss( { advanced: false } ) )
 		.pipe( p.rename( 'main.min.css' ) )
-		.pipe( gulp.dest( 'dist/css' ) )
-		.pipe( p.notify( 'Gulp Styles Task Completed' ) );
+		.pipe( gulp.dest( 'dist/css' ) );
 });
 
 /*==============================================================================
