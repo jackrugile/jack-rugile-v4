@@ -1,12 +1,14 @@
 $accent1: hsl( 0, 70%, 65% );
 $accent2: hsl( 120, 55%, 55% );
 $accent3: hsl( 200, 70%, 60% );
+$accent4: hsl( 0, 0%, 20% );
 $accent1-light: lighten( $accent1, 30% );
 $accent2-light: lighten( $accent2, 40% );
 $accent3-light: lighten( $accent3, 35% );
-$gray-dark: #333;
-$gray-mid: rgba(0, 0, 0, 0.4);
-$gray-light: #ddd;
+$accent4-light: lighten( $accent4, 35% );
+$gray-dark: hsl( 0, 0%, 20% );
+$gray-mid: hsl( 0, 0%, 60% );
+$gray-light: hsl( 0, 0%, 85% );
 $duration-off: 500ms;
 $duration-on: 0ms;
 
@@ -196,6 +198,20 @@ h3 {
 		&:hover {
 			background: $accent3;
 			border-color: $accent3;
+			color: #fff;
+		}
+	}
+}
+
+.items-wrap:nth-child( 5 ) {
+	h3 {
+		background: $accent4;
+	}
+	.item-link {
+		border-left-color: $accent4;
+		&:hover {
+			background: $accent4;
+			border-color: $accent4;
 			color: #fff;
 		}
 	}
